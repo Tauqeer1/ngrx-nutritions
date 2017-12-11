@@ -1,0 +1,13 @@
+<div>
+  <div>
+    <span style="font-weight:500">Results</span>
+  </div>
+  <div *ngIf="loading | async" mode="indeterminate"></div>
+  <div class="search-results">
+    <ul>
+      <li class="search-result-item" *ngFor="let result of results | async" [routerLink]="['/search', result.id]">
+        <span class="search-result-item-name">{{result.name}}</span>
+      </li>
+    </ul>
+  </div>
+</div>

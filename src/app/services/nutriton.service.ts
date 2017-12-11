@@ -11,7 +11,7 @@ import { SearchResult } from '../models/search-result.model';
 
 
 @Injectable()
-export class NutritonService {
+export class NutritionService {
 
   apiKey: string;
   constructor(private http: Http) {
@@ -37,7 +37,7 @@ export class NutritonService {
   }
 
   fetchFood(query: string): Observable<Food> {
-    const url 'https://api.nal.usda.gov/ndb/nutrients/?format=json&';
+    const url = 'https://api.nal.usda.gov/ndb/nutrients/?format=json&';
     const params: string = [
       `ndbno=${query}`,
       `nutrients=255`, // Water
